@@ -44,3 +44,13 @@ export function calculator(num1, num2, ...rest){
         multiply: arr.reduce((total, current) => total * current)
     }
 }
+
+export function analizeArray(arr){
+    arr = arr.sort((a, b) => a - b);
+    return{
+        average: Math.floor(arr.reduce((total, current) => total + current) / arr.length),
+        min: arr[0],
+        max: arr[arr.length - 1], 
+        length: arr.length
+    }
+}
